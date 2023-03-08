@@ -9,7 +9,7 @@ import {
 } from "sfs2x-api";
 import UserAgent from "user-agents";
 import Web3 from "web3";
-import { TransactionReceipt } from "web3-coere";
+import { TransactionReceipt } from "web3-core";
 import { Unit } from "web3-utils";
 import { IMoreOptions } from "../bot";
 import {
