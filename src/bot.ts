@@ -231,7 +231,7 @@ export class TreasureMapBot {
         logger.info("Send sleeping heros...");
         this.shouldRun = false;
 
-        await sleep(5000);
+        await sleep(1000);
 
         for (const hero of this.workingSelection) {
             await this.client.goSleep(hero);
@@ -1005,8 +1005,8 @@ export class TreasureMapBot {
     }
 
     sendPing() {
-        setInterval(() => this.client.ping(), 1000 * 10);
-        logger.info("Send Ping 10 seconds...");
+        setInterval(() => this.client.ping(), 1000 * 3);
+        logger.info("Send Ping 3 seconds...");
     }
     async registerNewMap() {
         try {
