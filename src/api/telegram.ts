@@ -141,7 +141,7 @@ export class Telegram {
                 chatId != this.bot.params.telegramChatId
             ) {
                 context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\n🟥 You do not have permission. your Telegram Chat Id is different from what was informed in the settings`
+                    `Account: ${this.bot.getIdentify()}\n\n You do not have permission. your Telegram Chat Id is different from what was informed in the settings`
                 );
                 return;
             }
@@ -172,7 +172,7 @@ export class Telegram {
         const getbool = (value: boolean) => (value ? "Yes" : "No");
 
         const html =
-            `👤Account: ${this.bot.getIdentify()}\n\n` +
+            `Account: ${this.bot.getIdentify()}\n\n` +
             `:globe_with_meridians:<b>Network</b>: ${rede}\n` +
             `<b>:bellhop_bell: :bellhop:Alert shield</b>: ${alertShield}\n` +
             `<b>:house:Heroes select at home</b>: ${houseHeroes
@@ -201,7 +201,7 @@ export class Telegram {
 
         if (!this.bot.shouldRun) {
             await context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Account not working`
+                `Account: ${this.bot.getIdentify()}\n\n Account not working`
             );
             return;
         }
@@ -247,7 +247,7 @@ export class Telegram {
         const houseHeroesIds = this.bot.houseHeroes.join(", ");
 
         const message =
-            `👤Account: ${this.bot.getIdentify()}\n\n` +
+            `Account: ${this.bot.getIdentify()}\n\n` +
             `Playing mode: ${this.bot.getStatusPlaying()}\n\n` +
             // `Adventure heroes: ${heroesAdventure.usedHeroes.length}/${heroesAdventure.allHeroes.length}\n` +
             // `Heroes selected for adventure: ${heroesAdventureSelected}\n` +
@@ -313,7 +313,7 @@ ${resultDb
             .toString()
             .padStart(2, "0")}`;
 
-        return `👤<b>${username}</b>:  ${bcoin} | ${bomberman} | ${zeroShield} | ${dateStr}`;
+        return `<b>${username}</b>:  ${bcoin} | ${bomberman} | ${zeroShield} | ${dateStr}`;
     })
     .join("\n")}`;
 
@@ -327,7 +327,7 @@ ${resultDb
             await context.replyWithHTML(`${message}\nMaterial: ${material}`);
         } catch (e) {
             await context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Not connected, please wait`
+                `Account: ${this.bot.getIdentify()}\n\n Not connected, please wait`
             );
         }
     }
@@ -339,7 +339,7 @@ ${resultDb
             await this.bot.db.set("report", date);
         } catch (e) {
             await this.sendMessageChat(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Not connected, please wait`
+                `Account: ${this.bot.getIdentify()}\n\n Not connected, please wait`
             );
         }
     }
@@ -349,7 +349,7 @@ ${resultDb
             // const detail = await this.client.coinDetail();
 
             const message =
-                "👤Account: " +
+                "Account: " +
                 this.bot.getIdentify() +
                 "\n\n" +
                 "Rewards:\n" +
@@ -374,19 +374,19 @@ ${resultDb
 
             return message;
         } else {
-            throw new Error("🟥 Not connected, please wait");
+            throw new Error(" Not connected, please wait");
         }
     }
     async telegramExit(context: Context) {
         if (this.bot.isResettingShield) {
             await context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 It is not possible to finalize at the moment, there is a web3 transaction being executed at the moment`
+                `Account: ${this.bot.getIdentify()}\n\n It is not possible to finalize at the moment, there is a web3 transaction being executed at the moment`
             );
             return;
         }
 
         await context.replyWithHTML(
-            `👤Account: ${this.bot.getIdentify()}\n\n⏳ Exiting in 10 seconds...`
+            `Account: ${this.bot.getIdentify()}\n\n⏳ Exiting in 10 seconds...`
         );
         await this.bot.sleepAllHeroes();
         this.bot.shouldRun = false;
@@ -398,7 +398,7 @@ ${resultDb
     async telegramStart(context: Context) {
         await this.bot.db.set("start", true);
         await context.replyWithHTML(
-            `👤Account: ${this.bot.getIdentify()}\n\n⏳ starting...`
+            `Account: ${this.bot.getIdentify()}\n\nstarting...`
         );
         await sleep(10000);
         await this.telegraf?.stop("SIGINT");
@@ -409,7 +409,7 @@ ${resultDb
 
         if (!this.bot.shouldRun) {
             await context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Account not working`
+                `Account: ${this.bot.getIdentify()}\n\n Account not working`
             );
             return;
         }
@@ -423,7 +423,7 @@ ${resultDb
             return `┣${this.getColor(hero)} [${hero.id}]: ${shield} (${hero.rockRepairShield})🪨`;
         };
         let message =
-            "🟥 Account not connected, wait the bot will try to connect again";
+            " Account not connected, wait the bot will try to connect again";
         const result = this.bot.squad.heroes;
 
         if (result && result.length) {
@@ -438,8 +438,8 @@ ${resultDb
                 .join("\n");
 
             message =
-                `👤Account: ${this.bot.getIdentify()}\n\n` +
-                `🛡️Shield heroes (${result.length}): \n\n${heroes}`;
+                `Account: ${this.bot.getIdentify()}\n\n` +
+                `Shield heroes (${result.length}): \n\n${heroes}`;
 
             if (material !== null) {
                 message += `\n\n🪨 Material:${material}`;
@@ -460,14 +460,14 @@ ${resultDb
 
         if (!this.bot.shouldRun || !this.bot.client.isLoggedIn) {
             await context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Account not working`
+                `Account: ${this.bot.getIdentify()}\n\n Account not working`
             );
             return;
         }
         const value = await this.bot.currentCalcFarm();
         if (!value) {
             return context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Farm calculation was not previously started`
+                `Account: ${this.bot.getIdentify()}\n\n Farm calculation was not previously started`
             );
         }
         const dateStart = value.start.date;
@@ -481,7 +481,7 @@ ${resultDb
 
         if (diffmin == 0) {
             return context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n⏳ wait at least 1 minute`
+                `Account: ${this.bot.getIdentify()}\n\n wait at least 1 minute`
             );
         }
 
@@ -508,7 +508,7 @@ ${resultDb
         }
 
         const html =
-            `👤Account: ${this.bot.getIdentify()}\n\n` +
+            `Account: ${this.bot.getIdentify()}\n\n` +
             `Date start: ${formatDate(new Date(dateStart))}\n` +
             `Date end: ${formatDate(new Date(dateEnd))}\n\n` +
             `Bcoin start: ${bcoinStart.toFixed(2)}\n` +
@@ -524,7 +524,7 @@ ${resultDb
             await this.bot.notification.hasUpdateVersion();
         if (existNotification) {
             const message =
-                "⚠️ Please update your code version, run yarn start on your computer, and execute in your telegram /start";
+                " Please update your code version, run yarn start on your computer, and execute in your telegram /start";
             context.replyWithHTML(message);
             return false;
         }
@@ -533,7 +533,7 @@ ${resultDb
     async telegramAverageGasPolygon(context: Context) {
         const result = await this.bot.getAverageWeb3Transaction();
         const html =
-            `👤Account: ${this.bot.getIdentify()}\n\n` +
+            `Account: ${this.bot.getIdentify()}\n\n` +
             `The values below are an average of how much it would cost right now\n\n` +
             `Claim: ${result.claim}\n` +
             `Reset Shield: ${result.resetShield}`;
@@ -543,13 +543,13 @@ ${resultDb
     async telegramWallet(context: Context) {
         if (this.bot.loginParams.type == "user") {
             return context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed when logging in with the wallet`
+                `Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed when logging in with the wallet`
             );
         }
 
         const result = await this.bot.getWalletBalance();
         const html =
-            `👤Account: ${this.bot.getIdentify()}\n\n` +
+            `Account: ${this.bot.getIdentify()}\n\n` +
             `MATIC: ${result.matic}\n` +
             `USDT: ${result.usdt}\n` +
             `BOMB: ${result.bomb}\n`;
@@ -565,24 +565,24 @@ ${resultDb
 
             if (!this.bot.client.isConnected) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\n🟥 Account not connected, please wait`
+                    `Account: ${this.bot.getIdentify()}\n\n Account not connected, please wait`
                 );
             }
 
             if (this.bot.isResettingShield) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nThere is already another hero resetting the shield at the moment`
+                    `Account: ${this.bot.getIdentify()}\n\nThere is already another hero resetting the shield at the moment`
                 );
             }
             if (this.bot.loginParams.type == "user") {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed when logging in with the wallet`
+                    `Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed when logging in with the wallet`
                 );
             }
 
             if (this.bot.loginParams.rede != "POLYGON") {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed for POLYGON`
+                    `Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed for POLYGON`
                 );
             }
 
@@ -590,7 +590,7 @@ ${resultDb
 
             if (!lastTransactionWeb3) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nyou currently have an ongoing transaction in your wallet`
+                    `Account: ${this.bot.getIdentify()}\n\nyou currently have an ongoing transaction in your wallet`
                 );
             }
 
@@ -599,7 +599,7 @@ ${resultDb
 
             if (hero.rockRepairShield > currentRock) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\n🟥 Not enough material, needed ${
+                    `Account: ${this.bot.getIdentify()}\n\n Not enough material, needed ${
                         hero.rockRepairShield
                     }, you have ${currentRock}`
                 );
@@ -610,7 +610,7 @@ ${resultDb
                 gas.resetShield > maxGasRepairShield
             ) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nYou configured to spend a maximum of ${maxGasRepairShield} on the transaction, at the moment ${
+                    `Account: ${this.bot.getIdentify()}\n\nYou configured to spend a maximum of ${maxGasRepairShield} on the transaction, at the moment ${
                         gas.resetShield
                     } is being charged`
                 );
@@ -629,12 +629,12 @@ ${resultDb
         try {
             if (this.bot.loginParams.type == "user") {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed when logging in with the wallet`
+                    `Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed when logging in with the wallet`
                 );
             }
             if (this.bot.loginParams.rede != "POLYGON") {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed for POLYGON`
+                    `Account: ${this.bot.getIdentify()}\n\nFunctionality only allowed for POLYGON`
                 );
             }
 
@@ -642,7 +642,7 @@ ${resultDb
 
             if (!lastTransactionWeb3) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nyou currently have an ongoing transaction in your wallet`
+                    `Account: ${this.bot.getIdentify()}\n\nyou currently have an ongoing transaction in your wallet`
                 );
             }
 
@@ -655,12 +655,12 @@ ${resultDb
             if (!bcoin) return;
             if (bcoin.value + bcoin.claimPending < 40) {
                 return context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nMinimum amount of 40 bcoin`
+                    `Account: ${this.bot.getIdentify()}\n\nMinimum amount of 40 bcoin`
                 );
             }
 
             context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n⏳ Starting withdraw ${
+                `Account: ${this.bot.getIdentify()}\n\n⏳ Starting withdraw ${
                     bcoin.value + bcoin.claimPending
                 }`
             );
@@ -678,17 +678,17 @@ ${resultDb
                     );
 
                 context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nYou withdraw ${received} Bcoin`
+                    `Account: ${this.bot.getIdentify()}\n\nYou withdraw ${received} Bcoin`
                 );
                 await this.telegramStartCalcFarm(context);
             } else {
                 context.replyWithHTML(
-                    `👤Account: ${this.bot.getIdentify()}\n\nfailed`
+                    `Account: ${this.bot.getIdentify()}\n\nfailed`
                 );
             }
         } catch (e: any) {
             return context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\nError: ${e.message}`
+                `Account: ${this.bot.getIdentify()}\n\nError: ${e.message}`
             );
         }
     }
@@ -705,14 +705,14 @@ ${resultDb
 
         if (!this.bot.shouldRun || !this.bot.client.isLoggedIn) {
             await context.replyWithHTML(
-                `👤Account: ${this.bot.getIdentify()}\n\n🟥 Account not working`
+                `Account: ${this.bot.getIdentify()}\n\n Account not working`
             );
             return;
         }
 
         const value = await this.bot.startCalcFarm();
         const html =
-            `👤Account: ${this.bot.getIdentify()}\n\n` +
+            `Account: ${this.bot.getIdentify()}\n\n` +
             `This command is for you to see a farm calculation from this moment on\n\n` +
             `Date: ${formatDate(new Date(value.date))}\n` +
             `Bcoin: ${value.bcoin.toFixed(2)}\n\n` +
@@ -725,7 +725,7 @@ ${resultDb
 
         return this.telegraf?.telegram.sendMessage(
             this.bot.params.telegramChatId,
-            `👤Account: ${this.bot.getIdentify()}\n\n${message}`
+            `Account: ${this.bot.getIdentify()}\n\n${message}`
         );
     }
 
