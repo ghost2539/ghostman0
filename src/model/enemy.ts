@@ -1,3 +1,4 @@
+
 export type IEnemyParams = {
     damage: number;
     maxHp: number;
