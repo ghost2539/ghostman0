@@ -278,94 +278,46 @@ export class Telegram {
         ).length;
     }
 
- //   async telegramRewardsAll(context: Context) {
-   //     if (!(await this.telegramCheckVersion(context))) return false;
-//
-  //      const resultDb = this.bot.db.getAllDatabase();
-//
-  //      const html = `
-//<b>Rewards</b>
+    async telegramRewardsAll(context: Context) {
+     if (!(await this.telegramCheckVersion(context))) return false;
 
-//Bcoin | Bomberman | heroes with zero shield | time last update UTC 0
-//
-//${resultDb
-//    .filter((v) => v.rewards)
-  //  .map((account) => {
-    //    const date = new Date(account.rewards.date);
-  //      const username = account.username;
-//        const zeroShield = this.getTotalHeroZeroShield(account);
-      //  const bcoin = account.rewards.values
-    //        .find(
-        //        (v: any) =>
-      //              v.network == this.bot.loginParams.rede && v.type == "BCoin"
-    //        )
-  //          ?.value.toFixed(2);
-//
-      //  const bomberman =
-    //        account.rewards.values.find(
-  //              (v: any) =>
-//                    v.network == this.bot.loginParams.rede &&
-    //                v.type == "Bomberman"
-  //          )?.value || "0";
-//
-//        const dateStr = `${date.getHours()}:${date
-      //      .getMinutes()
-    //        .toString()
-  //          .padStart(2, "0")}`;
-//
-    //    return `<b>${username}</b>:  ${bcoin} | ${bomberman} | ${zeroShield} | ${dateStr}`;
-  //  })
-//    .join("\n")}`;
-
-       async telegramRewardsAll(context: Context) {
       const resultDb = this.bot.db.getAllDatabase();
 
-      const html = `
-<b>Rewards</b>
+        const html = `
+b>Rewards</b>
 
 Bcoin | Bomberman | heroes with zero shield | time last update UTC 0
 
 ${resultDb
-   .filter((v) => v.rewards)
-   .filter(
-      )
-   )
-   .map((account, index: number) => {
-      const date = new Date(account.rewards.date);
-      const username = account.username;
-      const zeroShield = this.getTotalHeroZeroShield(account);
-      const bcoin = account.rewards.values
-         .find(
-            (v: any) =>
-               v.network == this.bot.loginParams.rede && v.type == "BCoin"
-         )
-         ?.value.toFixed(2);
+    .filter((v) => v.rewards)
+    .map((account) => {
+        const date = new Date(account.rewards.date);
+        const username = account.username;
+        const zeroShield = this.getTotalHeroZeroShield(account);
+        const bcoin = account.rewards.values
+            .find(
+                (v: any) =>
+                    v.network == this.bot.loginParams.rede && v.type == "BCoin"
+            )
+            ?.value.toFixed(2);
 
-      const bomberman =
-         account.rewards.values.find(
-            (v: any) =>
-               v.network == this.bot.loginParams.rede && v.type == "Bomberman"
-         )?.value || "0";
+        const bomberman =
+            account.rewards.values.find(
+                (v: any) =>
+                    v.network == this.bot.loginParams.rede &&
+                    v.type == "Bomberman"
+            )?.value || "0";
 
-      const dateStr = `${date.getHours()}:${date
-         .getMinutes()
-         .toString()
-         .padStart(2, "0")}`;
+        const dateStr = `${date.getHours()}:${date
+            .getMinutes()
+            .toString()
+            .padStart(2, "0")}`;
 
-      const lastItem = resultDb.length - 1 == index;
-      const caracter = lastItem ? this.lastItem : this.item;
-      const subItem = lastItem ? this.subLastItem : this.subItem;
-      const subItemLast = lastItem ? this.subLastItemLast : this.subItemLast;
+        return `<b>${username}</b>:  ${bcoin} | ${bomberman} | ${zeroShield} | ${dateStr}`;
+    })
+    .join("\n")}`;
 
-      return (
-         `${caracter} <b>${username}</b>\n` +
-         `${subItem} Bomb: ${bcoin}\n` +
-         `${subItem} Bomberman: ${bomberman}\n` +
-         `${subItem} Zero Shield: ${zeroShield}\n` +
-         `${subItemLast} Date: ${dateStr}`
-      );
-   })
-   .join("\n")}`;
+
         context.replyWithHTML(html);
     }
 
