@@ -328,10 +328,7 @@ Bcoin | Bomberman | heroes with zero shield | time last update UTC 0
 ${resultDb
    .filter((v) => v.rewards)
    .filter(
-      (account) =>
-         rewardsAllPermission.length == 0 ||
-         (rewardsAllPermission.length &&
-            rewardsAllPermission.includes(account.username))
+      )
    )
    .map((account, index: number) => {
       const date = new Date(account.rewards.date);
