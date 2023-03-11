@@ -318,8 +318,6 @@ export class Telegram {
 //    .join("\n")}`;
 
        async telegramRewardsAll(context: Context) {
-      const { rewardsAllPermission } = this.bot.params;
-
       const resultDb = this.bot.db.getAllDatabase();
 
       const html = `
