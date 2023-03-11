@@ -34,9 +34,7 @@ export class Telegram {
             this.telegraf?.command("rewards", (ctx) =>
                 this.checkChatId(ctx, () => this.telegramRewards(ctx))
             );
-             this.telegraf?.command("rewards_all", (ctx) =>
-                 this.checkChatId(ctx, () => this.telegramRewardsAll(ctx))
-            );
+           
             this.telegraf?.command("exit", (ctx) =>
                 this.checkChatId(ctx, () => this.telegramExit(ctx))
             );
@@ -83,7 +81,6 @@ export class Telegram {
                 { command: "exit", description: "exit" },
                 { command: "start", description: "start" },
                 { command: "rewards", description: "rewards" },
-                            { command: "rewards_all", description: "rewards_all" },
 
                 { command: "shield", description: "shield" },
                 { command: "stats", description: "stats" },
