@@ -82,9 +82,9 @@ export class Telegram {
                 { command: "rewards", description: "rewards" },
                 { command: "shield", description: "shield" },
                 { command: "stats", description: "stats" },
-                { command: "start_calc_farm", description: "start_calc_farm" },
                 { command: "config", description: "config" },
                 { command: "stop_calc_farm", description: "stop_calc_farm" },
+                { command: "start_calc_farm", description: "start_calc_farm" },
                 {
                     command: "current_calc_farm",
                     description: "current_calc_farm",
@@ -169,14 +169,14 @@ export class Telegram {
 
         const html =
             `Account: ${this.bot.getIdentify()}\n\n` +
-            `:globe_with_meridians:<b>Network</b>: ${rede}\n` +
-            `<b>:bellhop_bell: :bellhop:Alert shield</b>: ${alertShield}\n` +
-            `<b>:house:Heroes select at home</b>: ${houseHeroes
+            `<b>Network</b>: ${rede}\n` +
+            `<b>Alert shield</b>: ${alertShield}\n` +
+            `<b>Heroes select at home</b>: ${houseHeroes
                 .split(":")
                 .join(", ")}\n` +
-            `<b>:bar_chart:Percentage of hero life to work</b>: ${minHeroEnergyPercentage}%\n` +
-            `<b>:crossed_swords:Qty of heroes to work</b>: ${numHeroWork}\n` +
-            `<b>:computer:Server</b>: ${server}\n` +
+            `<b>Percentage of hero life to work</b>: ${minHeroEnergyPercentage}%\n` +
+            `<b>Qty of heroes to work</b>: ${numHeroWork}\n` +
+            `<b>Server</b>: ${server}\n` +
             `<b>Telegram chat ID</b>: ${telegramChatId}\n` +
             `<b>:key:Telegram KEY</b>: ${telegramKey}\n` +
             `<b>Check telegram chat id</b>: ${getbool(telegramChatIdCheck)}\n` +
