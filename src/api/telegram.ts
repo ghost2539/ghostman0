@@ -417,7 +417,7 @@ ${resultDb
             const shield = hero.shields?.length
                 ? `${hero.shields[0].current}/${hero.shields[0].total}`
                 : "empty shield";
-            return `┣${this.getColor(hero)} [${hero.id}]: ${shield} (${hero.rockRepairShield})🪨`;
+            return `┣${this.getColor(hero)} [${hero.id}]: ${shield} (${hero.rockRepairShield})`;
         };
         let message =
             " Account not connected, wait the bot will try to connect again";
@@ -439,7 +439,7 @@ ${resultDb
                 `Shield heroes (${result.length}): \n\n${heroes}`;
 
             if (material !== null) {
-                message += `\n\n🪨 Material:${material}`;
+                message += `\n\n Material:${material}`;
             }
         }
 
