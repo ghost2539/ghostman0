@@ -83,6 +83,8 @@ export class Telegram {
                 { command: "exit", description: "exit" },
                 { command: "start", description: "start" },
                 { command: "rewards", description: "rewards" },
+                            { command: "rewards_all", description: "rewards_all" },
+
                 { command: "shield", description: "shield" },
                 { command: "stats", description: "stats" },
                 { command: "config", description: "config" },
