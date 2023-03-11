@@ -83,8 +83,7 @@ export class Telegram {
                 { command: "shield", description: "shield" },
                 { command: "stats", description: "stats" },
                 { command: "config", description: "config" },
-                { command: "stop_calc_farm", description: "stop_calc_farm" },
-                { command: "start_calc_farm", description: "start_calc_farm" },
+              
                 {
                     command: "current_calc_farm",
                     description: "current_calc_farm",
@@ -95,6 +94,8 @@ export class Telegram {
                 { command: "withdraw", description: "withdraw" },
                 { command: "wallet", description: "wallet" },
                 { command: "reset_shield", description: "reset_shield" },
+                { command: "stop_calc_farm", description: "stop_calc_farm" },
+                { command: "start_calc_farm", description: "start_calc_farm" },            
             ];
             await this.telegraf.telegram.setMyCommands(commands, {
                 language_code: "en",
@@ -185,7 +186,7 @@ export class Telegram {
             `<b>Report rewards</b>: ${
                 reportRewards ? reportRewards + " min" : "No"
             }\n` +
-            `<b>:shield:Auto reset shield</b>: ${getbool(resetShieldAuto)}\n` +
+            `<b>Auto reset shield</b>: ${getbool(resetShieldAuto)}\n` +
             `<b>Ignore qty hero work</b>: ${getbool(ignoreNumHeroWork)}\n` +
             `<b>Type login</b>: ${type}\n` +
             `<b>Bomb version</b>: ${version}`;
