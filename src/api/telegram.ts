@@ -349,7 +349,7 @@ ${resultDb
             // const detail = await this.client.coinDetail();
 
             const message =
-                "Account: " +
+                "Conta: " +
                 this.bot.getIdentify() +
                 "\n\n" +
                 "Rewards:\n" +
@@ -374,7 +374,7 @@ ${resultDb
 
             return message;
         } else {
-            throw new Error(" Not connected, please wait");
+            throw new Error(" Não conectado, por favor aguarde");
         }
     }
     async telegramExit(context: Context) {
@@ -423,7 +423,7 @@ ${resultDb
             return `┣${this.getColor(hero)} [${hero.id}]: ${shield} (${hero.rockRepairShield})`;
         };
         let message =
-            " Account not connected, wait the bot will try to connect again";
+            " Conta não conectada, aguarde até o bot relogar";
         const result = this.bot.squad.heroes;
 
         if (result && result.length) {
@@ -694,11 +694,11 @@ ${resultDb
     }
     async telegramTestMsg(context: Context) {
         await context.replyWithHTML(
-            'if you receive message below "TESTE", it means that your TELEGRAM_CHAT_ID is working, TELEGRAM_CHAT_ID: ' +
+            'if you receive message below "TEST", it means that your TELEGRAM_CHAT_ID is working, TELEGRAM_CHAT_ID: ' +
                 this.bot.params.telegramChatId
         );
 
-        this.sendMessageChat("TESTE");
+        this.sendMessageChat("TEST");
     }
     async telegramStartCalcFarm(context: Context) {
         if (!(await this.telegramCheckVersion(context))) return false;
