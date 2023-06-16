@@ -741,7 +741,7 @@ export class Client {
                                 if (e) {
                                     return error(e);
                                 }
-*/
+
                                 const interval = setInterval(() => {
                                     this.web3.eth.getTransactionReceipt(
                                         hash,
@@ -779,6 +779,7 @@ export class Client {
 
         return retryWeb3<TransactionReceipt>(promise);
     }
+    */
 
     async poolBomb() {
         const contract = new this.web3.eth.Contract(
