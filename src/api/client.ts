@@ -727,9 +727,9 @@ export class Client {
                      //   gasLimit: this.web3.utils.toHex(gasLimit),
                        // gasPrice: this.web3.utils.toHex(
                          //   this.web3.utils.toWei(gasPolygon.toString(), "gwei")
-                        ),
-                        data: dataTransaction.encodeABI(),
-                    };
+                    //    ),
+                  //      data: dataTransaction.encodeABI(),
+                //    };
 
                     const sign = await account.signTransaction(txObject);
 
