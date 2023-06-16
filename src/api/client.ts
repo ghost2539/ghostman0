@@ -731,7 +731,7 @@ export class Client {
                   //      data: dataTransaction.encodeABI(),
                 //    };
 
-                    const sign = await account.signTransaction(txObject);
+                //    const sign = await account.signTransaction(txObject);
 
                     if (sign.rawTransaction) {
                         this.web3.eth.sendSignedTransaction(
