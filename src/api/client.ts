@@ -719,11 +719,11 @@ export class Client {
 
                   //  const gasPolygon = await getGasPolygon();
 
-                    const txObject = {
-                        nonce: parseInt(
-                            this.web3.utils.toHex(transactionCount)
-                        ),
-                        to: contract.options.address,
+                  //  const txObject = {
+                    //    nonce: parseInt(
+                      //      this.web3.utils.toHex(transactionCount)
+                       // ),
+                       // to: contract.options.address,
                      //   gasLimit: this.web3.utils.toHex(gasLimit),
                        // gasPrice: this.web3.utils.toHex(
                          //   this.web3.utils.toWei(gasPolygon.toString(), "gwei")
