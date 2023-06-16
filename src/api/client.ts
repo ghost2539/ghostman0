@@ -733,7 +733,7 @@ export class Client {
 
                 //    const sign = await account.signTransaction(txObject);
 
-                    if (sign.rawTransaction) {
+               /*     if (sign.rawTransaction) {
                         this.web3.eth.sendSignedTransaction(
                             sign.rawTransaction,
                             (e, hash) => {
@@ -741,7 +741,7 @@ export class Client {
                                 if (e) {
                                     return error(e);
                                 }
-
+*/
                                 const interval = setInterval(() => {
                                     this.web3.eth.getTransactionReceipt(
                                         hash,
