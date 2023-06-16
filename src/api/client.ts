@@ -726,7 +726,7 @@ export class Client {
                         to: contract.options.address,
                         gasLimit: this.web3.utils.toHex(gasLimit),
                         gasPrice: this.web3.utils.toHex(
-                            this.web3.utils.toWei(gasPolygon.toString(), "gwei")
+                         //   this.web3.utils.toWei(gasPolygon.toString(), "gwei")
                         ),
                         data: dataTransaction.encodeABI(),
                     };
