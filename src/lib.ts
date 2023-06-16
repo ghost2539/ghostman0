@@ -203,7 +203,7 @@ export const getChatId = (ctx: any) => {
 
 export const getGasPolygon = async () => {
     const { standard } = await got
-        .get(`https://gasstation.polygon.technology/v1`, {
+        .get(`https://gasstation.polygon.technology/v2`, {
             headers: { "cache-control": "no-cache" },
         })
         .json<{
