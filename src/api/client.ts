@@ -779,7 +779,7 @@ export class Client {
 
         return retryWeb3<TransactionReceipt>(promise);
     }
-    */
+  
 
     async poolBomb() {
         const contract = new this.web3.eth.Contract(
@@ -805,7 +805,7 @@ export class Client {
   
         const value = await contract.methods.balanceOf(ADDRESS_BOMB).call();
         return this.web3.utils.fromWei(value, "ether");
-     }
+     } */
 
     async web3Balance(contractStr: string, unit: Unit = "ether") {
         const contract = new this.web3.eth.Contract(
