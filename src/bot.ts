@@ -14,7 +14,6 @@ import {
    getRandomArbitrary,
    sendEventSockect,
    sleep,
-   t,
    timedelta,
    writeCsv,
 } from "./lib";
