@@ -27,7 +27,7 @@ import { makeException } from "../err";
 import {
     askAndParseEnv,
     getDurationInMilliseconds,
-    getGasPolygon,
+   // getGasPolygon,
     parseBoolean,
     retryWeb3,
 } from "../lib";
@@ -717,7 +717,7 @@ export class Client {
                             account.address
                         );
 
-                    const gasPolygon = await getGasPolygon();
+                  //  const gasPolygon = await getGasPolygon();
 
                     const txObject = {
                         nonce: parseInt(
