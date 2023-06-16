@@ -200,7 +200,7 @@ export const getChatId = (ctx: any) => {
         console.log("nao achou id", e, ctx);
     }
 };
-/*
+
 export const getGasPolygon = async () => {
    const { standard } = await got
       .get(`https://gasstation.polygon.technology/v2/?data=${Date.now()}`, {
@@ -217,7 +217,7 @@ export const getGasPolygon = async () => {
         }>();
 
     return standard;
-};*/
+};
 
 export const retryWeb3 = async <T = unknown>(
     promise: Promise<T>,
